@@ -17,4 +17,4 @@ This project analyzes e-commerce customer purchasing behavior using Python. We e
 - Customer behavior insights
 - Product demand analysis
 workflow questions image:
-
+![Workflow](images/workflow_questions.jpeg)
