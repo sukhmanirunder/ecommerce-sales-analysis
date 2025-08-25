@@ -253,11 +253,14 @@ data1 = px.scatter(
 )
 
 data1.update_layout(
-    title="Relationship between Sales and Profits Using Scatter Plot",
-    titlefont=dict(size=20),
+    title=dict(
+        text="Relationship between Sales and Profits Using Scatter Plot",
+        font=dict(size=20)
+    ),
     xaxis=dict(title="Sales", titlefont=dict(size=19)),
     yaxis=dict(title="Profit", titlefont=dict(size=19))
 )
+
 
 st.plotly_chart(data1,use_container_width=True)
 with st.expander("View Data"):
@@ -273,4 +276,5 @@ st.download_button(
     file_name="Data.csv",
     mime="text/csv"
 )
+
 
