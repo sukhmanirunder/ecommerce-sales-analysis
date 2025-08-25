@@ -26,14 +26,24 @@ except Exception as e:
 
 print("✅ USD to INR:", usd_to_inr)
 
-fl =st.file_uploader(":file_folder: upload a file",type=(["csv","txt","xlsx","xls"]))
-if fl is not  None:
+# File upload
+fl = st.file_uploader(":file_folder: Upload a file", type=["csv", "txt", "xlsx", "xls"])
+
+if fl is not None:
+    # When user uploads a file
     filename = fl.name
-    st.write(filename)
-    df= pd.read_csv(filename,encoding= "ISO-8859-1")
+    st.write("✅ Using uploaded file:", filename)
+
+    if filename.endswith(".csv") or filename.endswith(".txt"):
+        df = pd.read_csv(fl, encoding="ISO-8859-1")
+    else:
+        df = pd.read_excel(fl)
+
 else:
-    os.chdir(r"D:\project_python")
-    df=pd.read_csv("indian_ecommerce2.csv",encoding= "ISO-8859-1")
+    # Fallback to repo dataset
+    st.write("ℹ️ No file uploaded. Using default dataset from repo.")
+    df = pd.read_csv("indian_ecommerce2.csv", encoding="ISO-8859-1")
+
 col1,col2=st.columns((2))
 df["Order Date"]= pd.to_datetime(df["Order Date"])
 #getting the  min and  max date
@@ -263,3 +273,4 @@ st.download_button(
     file_name="Data.csv",
     mime="text/csv"
 )
+
