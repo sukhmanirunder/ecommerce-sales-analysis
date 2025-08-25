@@ -18,3 +18,6 @@ This project analyzes e-commerce customer purchasing behavior using Python. We e
 - Product demand analysis
 workflow questions image:
 ![Workflow](images/workflow_questions.jpeg)
+## 🚀 Live Demo
+You can try the interactive dashboard here:  
+[Streamlit App](https://ecommerce-sales-analysis-hboin34appzsmvmmbaxrssl.streamlit.app/)
