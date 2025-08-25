@@ -251,14 +251,17 @@ data1 = px.scatter(
     y="Profit",
     size="Quantity"
 )
-
 data1.update_layout(
     title=dict(
         text="Relationship between Sales and Profits Using Scatter Plot",
         font=dict(size=20)
     ),
-    xaxis=dict(title="Sales", titlefont=dict(size=19)),
-    yaxis=dict(title="Profit", titlefont=dict(size=19))
+    xaxis=dict(
+        title=dict(text="Sales", font=dict(size=19))
+    ),
+    yaxis=dict(
+        title=dict(text="Profit", font=dict(size=19))
+    )
 )
 
 
@@ -276,5 +279,6 @@ st.download_button(
     file_name="Data.csv",
     mime="text/csv"
 )
+
 
 
